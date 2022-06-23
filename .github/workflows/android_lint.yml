@@ -3,12 +3,11 @@ name: Android Kotlin lint test
 on: [ pull_request ]
 
 jobs:
-  build:
+  Unit-test:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
-      - name: Setup java dependencies
       - uses: actions/setup-java@v1
         with: { java-version: 11 }
       - name: Run unit tests
