@@ -1,0 +1,23 @@
+name: Android build feature artifacts [APK,AAB]
+
+on: [ pull_request ]
+
+jobs:
+  Build-Feature-APK:
+    runs-on: ubuntu-latest
+    name: Build Feature APK
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v2
+      - name: Setup Java
+        uses: actions/setup-java@v1
+        with: { java-version: 11 }
+      - name: Install NDK
+        run: echo "y" | sudo ${ANDROID_HOME}/tools/bin/sdkmanager --install "ndk;23.2.8568313" --sdk_root=${ANDROID_SDK_ROOT}
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+      - name: Output version code
+
+
+
+

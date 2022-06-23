@@ -1,6 +1,6 @@
 name: Android Unit Tests
 
-on: [ pull_request]
+on: [ pull_request ]
 
 jobs:
   Unit-test:
@@ -10,5 +10,11 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-java@v1
         with: { java-version: 11 }
+
+      - name: Setup google-json from secrets
+        env:
+          FIREBASE_SECRET: ${{ secrets.GOOGLE_SERVICE_JSON_SECRET }}
+        run: echo $FIREBASE_SECRET > p2p-wallet-android/app/google-services.json
+
       - name: Run unit tests
         run: ./gradlew test
