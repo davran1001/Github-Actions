@@ -1,6 +1,6 @@
-name: Android Kotlin lint test
+name: Android Kotlin lint
 
-on: [ pull_request,push]
+on: [ pull_request]
 
 jobs:
   Android-lint:
