@@ -17,6 +17,21 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x ./gradlew
       - name: Output version code
+        run: echo VERSION_CODE
+      - name: Create apikey properties file
+        run: |
+          - touch apikey.properties
+          - echo "rpcPoolApiKey=\"${{ secret.RPC_POOL_API_KEY }}\"" >> apikey.properties
+          - echo "moonpayKey=\"${{ secret.MOONPAY_KEY }}\"" >> apikey.properties
+          - echo "comparePublicKey=\"${{ secret.COMPARE_PUBLIC_KEY }}\"" >> apikey.properties
+          - echo "intercomApiKey=\"${{ secret.INTERCOM_API_KEY }}\"" >> apikey.properties
+          - echo "intercomAppId=\"${{ secret.INTERCOM_APP_ID }}\"" >> apikey.properties
+          - echo "amplitudeKey=\"${{ secret.AMPLITURE_KEY }}\"" >> apikey.properties
+          - echo "apikeys.properties succesfully created"
+      - name: Build feature artifacts with gradle
+        run: ./gradlew assembleFeature
+
+
 
 
 
