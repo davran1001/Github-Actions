@@ -36,7 +36,7 @@ jobs:
 
       #Run ktlint
       - name: Run Linters and Test
-        run: ./gradlew ktlint
+        run: ./gradlew ktlint -PautoCorrect=0
 
 
 
