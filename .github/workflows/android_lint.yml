@@ -16,9 +16,27 @@ jobs:
   Android-lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-java@v1
-        with: { java-version: 11 }
-      - name: Run android lint
-        run: ./gradlew --no-daemon -g /cache ktlint -PautoCorrect=0
+      #Check out current repository
+      - name: Fetch sources
+        uses: actions/checkout@v2
+
+      #Cache gradle dependency
+      - name: Setup gradle dependencies cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-caches-${{ hasFiles('**/*.gradle') }}
+
+      #Cache gradle wrapper
+      - name: Setup Gradle Wrapper Cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-wrapper-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}
+
+      #Run ktlint
+      - name: Run Linters and Test
+        run: ./gradlew ktlint
+
+
 
