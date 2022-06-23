@@ -1,6 +1,6 @@
 name: Android Kotlin lint test
 
-on: [ pull_request,push ]
+on: [ pull_request ]
 
 jobs:
   Unit-test:
@@ -36,7 +36,7 @@ jobs:
 
       #Run ktlint
       - name: Run Linters and Test
-        run: ./gradlew ktlint -PautoCorrect=1
+        run: ./gradlew ktlint -PautoCorrect=0
 
 
 
