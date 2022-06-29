@@ -10,7 +10,7 @@ jobs:
   gradle_setup:
     runs-on: ubuntu-latest
     steps:
-      - uses: ./.github/workflows/git_checkout.yml
+      - uses: actions/checkout@v2
 
           #Cache gradle dependency
       - name: Setup gradle dependencies cache
