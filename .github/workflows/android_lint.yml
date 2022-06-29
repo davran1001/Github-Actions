@@ -8,9 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ./.github/actions/setup-gradle
-      #Check out current repository
-
-      #Run ktlint
       - name: Run Linters and Test
         run: ./gradlew ktlint -PautoCorrect=0
 
