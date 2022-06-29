@@ -11,4 +11,5 @@ runs:
     - name: Create google-service.json
       env:
         FIREBASE_SECRET: ${{ inputs.firebase-secret }}
+      shell: bash
       run: echo FIREBASE_SECRET > app/google-services.json
