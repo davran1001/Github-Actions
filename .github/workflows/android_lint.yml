@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: .github/workflows/android_gradle_setup.yml
+      - uses: ./.github/workflows/android_gradle_setup.yml
       #Check out current repository
 
       #Run ktlint
