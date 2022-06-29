@@ -10,8 +10,6 @@ jobs:
   gradle_setup:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-          #Cache gradle dependency
       - name: Setup gradle dependencies cache
         uses: actions/cache@v2
         with:
