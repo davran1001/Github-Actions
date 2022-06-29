@@ -8,6 +8,7 @@ inputs:
 runs:
   using: composite
   steps:
+    - name: Create google-service.json
       env:
         FIREBASE_SECRET: ${{ inputs.firebase-secret }}
       run: echo FIREBASE_SECRET > app/google-services.json
