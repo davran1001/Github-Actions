@@ -1,28 +1,14 @@
-name: Android Kotlin lint test
+name: Android Kotlin lint
 
-on: [ pull_request,push]
+on: [ pull_request]
 
 jobs:
-  Android-lint:
+  android-lint:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/workflows/android_gradle_setup.yml
       #Check out current repository
-      - name: Fetch sources
-        uses: actions/checkout@v2
-
-      #Cache gradle dependency
-      - name: Setup gradle dependencies cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.gradle/caches
-          key: ${{ runner.os }}-gradle-caches-${{ hashFiles('**/*.gradle') }}
-
-      #Cache gradle wrapper
-      - name: Setup Gradle Wrapper Cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-wrapper-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}
 
       #Run ktlint
       - name: Run Linters and Test
