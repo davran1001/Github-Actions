@@ -12,6 +12,6 @@ jobs:
         with: { java-version: 11 }
       - uses: ./.github/actions/setup-firebase
         with:
-          firebase-secret: ${{ secrets/GOOGLE_SERVICE_JSON_SECRET }}
+          firebase-secret: ${{ secrets.GOOGLE_SERVICE_JSON_SECRET }}
       - name: Run unit tests
         run: ./gradlew test
