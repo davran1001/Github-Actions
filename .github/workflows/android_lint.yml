@@ -8,7 +8,7 @@ jobs:
     steps:
       #Check out current repository
       - name: Setup gradle
-        uses: ./.github/workflows/android_gradle_setup.yml
+        uses: .github/workflows/android_gradle_setup.yml
 
       #Run ktlint
       - name: Run Linters and Test
