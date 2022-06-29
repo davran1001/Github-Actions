@@ -5,7 +5,6 @@ on: [ pull_request ]
 jobs:
   build-apk-feature:
     runs-on: ubuntu-latest
-    environment: develop
     name: Build Feature APK
     steps:
       - name: Checkout branch
