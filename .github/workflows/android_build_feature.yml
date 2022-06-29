@@ -3,8 +3,9 @@ name: Android build feature artifacts [APK,AAB]
 on: [ pull_request ]
 
 jobs:
-  Build-Feature-APK:
+  build-apk-feature:
     runs-on: ubuntu-latest
+    environment: develop
     name: Build Feature APK
     steps:
       - name: Checkout branch

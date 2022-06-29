@@ -1,0 +1,13 @@
+on:
+  workflow_call:
+    inputs:
+      work_name:
+        type: string
+        required: false
+
+jobs:
+  setup_java:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-java@v1
+        with: { java-version: 11 }

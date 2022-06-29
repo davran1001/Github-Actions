@@ -3,7 +3,7 @@ name: Android Unit Tests
 on: [ pull_request ]
 
 jobs:
-  Unit-test:
+  android-unit-test:
     runs-on: ubuntu-latest
 
     steps:
