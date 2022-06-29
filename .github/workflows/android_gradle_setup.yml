@@ -10,7 +10,7 @@ jobs:
   gradle_setup:
     runs-on: ubuntu-latest
     steps:
-      - uses: p2p-org/p2p-wallet-android/tree/develop/.github/workflows/git_checkout.yml
+      - uses: ./.github/workflows/git_checkout.yml
 
           #Cache gradle dependency
       - name: Setup gradle dependencies cache
