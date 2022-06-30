@@ -8,10 +8,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - uses: actions/setup-java@v1
         with: { java-version: 11 }
+
       - uses: ./.github/actions/setup-firebase
         with:
           firebase-secret: ${{ secrets.GOOGLE_SERVICE_JSON_SECRET }}
+
       - name: Run unit tests
         run: ./gradlew test
