@@ -27,6 +27,8 @@ jobs:
         with:
           bot-token: "token"
           channel-id: "channel id"
+          build-type: "debug"
+          artifact-type: "apk"
 
 
 
