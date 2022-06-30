@@ -25,8 +25,8 @@ jobs:
       - name: Upload artifact to Slack
         uses: ./.github/actions/setup-slack
         with:
-          bot-token: ${{ secret.SLACK_BOT_TOKEN }}
-          channel-id: ${{ secret.SLACK_CHANNEL_ID }}
+          bot-token: "token"
+          channel-id: "channel id"
 
 
 
