@@ -13,5 +13,10 @@ jobs:
       - name: Run Linters and Test
         run: ./gradlew ktlint -PautoCorrect=0
 
+      - name: Try to get branch name
+        run: |
+          echo $GITHUB_REF_NAME
+          echo $GITHUB_HEAD_REF
+
 
 
